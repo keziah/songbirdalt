@@ -1,15 +1,8 @@
 <?php session_start();
 include("config.php");
-
 ?>
 
-<?php
-
-	$project = $_GET['projectname'];
-	?>
-
 <html>
-
 <head>
 	<title>Songbird</title> 
 	<meta charset="utf-8">
@@ -29,6 +22,9 @@ include("config.php");
 
 </head>
 <body>
+<?php
+$project = $_GET['projectname'];
+?>
 <div data-role="page">
 
 	<div data-role="header">
@@ -38,7 +34,7 @@ include("config.php");
 		?>
 		
 		</h1>
-		<a data-role="button" href="myProfile.php" data-icon="home" data-iconpos="left" class="ui-btn-left" data-ajax="false">Home
+		<a data-role="button" href="myProfile.php" data-icon="home" data-iconpos="left" class="ui-btn-left">Home
         </a>
 		
 
@@ -68,19 +64,20 @@ include("config.php");
 	echo "<pre>".$row["lyrics"]."</pre>"; //give pre a class or id so you can change font in css
 	?>	
 		
-	<a href="lyrics.php?projectname=<?php echo "".$project."" ?>#editlyrics" data-role="button" data-rel="dialog" data-transition="pop">Edit Lyrics</a>
+	<a href="#editlyrics" data-role="button" data-rel="dialog" data-transition="pop">Edit Lyrics</a>
 
 
 	
 	</div><!-- /content -->
 
 
-	<div data-role="footger" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
+	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
 		<div data-role="navbar" class="nav-glyphish-example">
 			<ul>
-
-				<li><a href="music.php?projectname=<?php echo "".$project."" ?>" id="music" data-icon="custom">Music</a></li>
+				
 				<li><a href="lyrics.php?projectname=<?php echo "".$project."" ?>" id="lyrics" data-icon="custom" class="ui-btn-active">Lyrics</a></li>
+				<li><a href="music.php?projectname=<?php echo "".$project."" ?>" id="music" data-icon="custom">Music</a></li>
+				
 			</ul>
 		</div>
 	</div>
@@ -93,15 +90,13 @@ include("config.php");
 		<div data-role="header">
 		<h1>Edit Lyrics</h1>
 		</div>
-	
 		<div data-role="content">
-		
-		<form action="editlyrics.php" id="edit2" method="POST" data-ajax="false">
-		<div data-role="fieldcontain">
-			<textarea cols="40" rows="8" name="lyrics" id="lyrics"><?php echo "".$row['lyrics']."" ?> </textarea>
-			<input type="hidden" name="projectname" value="<?php echo "$project" ?>"/><p>
-			<input type="submit" value="Submit"/>
-		</div>
+		<form action="editlyrics.php" method="POST" data-ajax="false">
+			<div data-role="fieldcontain">
+				<textarea cols="40" rows="8" name="lyrics" id="lyrics"><?php echo "".$row['lyrics']."" ?> </textarea>
+				<input type="hidden" name="projectname" value="<?php echo "$project" ?>"/><p>
+				<input type="submit" value="Submit"/>
+			</div>
 		</form>
 		</div>
 	</div>

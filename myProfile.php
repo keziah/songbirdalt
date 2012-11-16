@@ -99,7 +99,7 @@ include("config.php");
 			?>
 			
 			
-			<a href="music.php?projectname=<?php echo "".$project."" ?>" data-ajax="false"><?php echo $project ?> </a>
+			<a href="lyrics.php?projectname=<?php echo "".$project."" ?>" data-ajax="false"><?php echo $project ?> </a>
 			<p>
 			<?php
 			

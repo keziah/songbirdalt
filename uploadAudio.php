@@ -32,4 +32,4 @@ echo <<<EOF
 EOF;
 ?>
 
-//<meta http-equiv="REFRESH" content="3; URL='music.php?projectname=<?php echo "".$project."" ?>'">
+<meta http-equiv="REFRESH" content="3; URL='lyrics.php?projectname=<?php echo "".$project."" ?>'">
