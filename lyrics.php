@@ -84,7 +84,6 @@ $project = $_GET['projectname'];
 
 </div><!-- /page -->
 
-
 <div data-role="dialog" class="ui-dialog ui-page ui-body-c" id="editlyrics" data-url="editlyrics">
 	<div role="dialog">
 		<div data-role="header">
@@ -101,6 +100,8 @@ $project = $_GET['projectname'];
 		</div>
 	</div>
 </div>
+
+
 
 
 </body>
