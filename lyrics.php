@@ -53,16 +53,7 @@ include("config.php");
 
 				
 	</div><!-- /header -->
-	
-	
-	
-	
 
-<!--
-	<?php
-	$project = $_GET['projectname'];
-	?>
-	-->
 	
 	<div data-role="content">
 	
@@ -77,14 +68,14 @@ include("config.php");
 	echo "<pre>".$row["lyrics"]."</pre>"; //give pre a class or id so you can change font in css
 	?>	
 		
-	<a href="#editlyrics" data-role="button" data-rel="dialog" data-transition="pop">Add or Edit Lyrics</a>
+	<a href="lyrics.php?projectname=<?php echo "".$project."" ?>#editlyrics" data-role="button" data-rel="dialog" data-transition="pop">Edit Lyrics</a>
 
 
 	
 	</div><!-- /content -->
 
 
-	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
+	<div data-role="footger" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
 		<div data-role="navbar" class="nav-glyphish-example">
 			<ul>
 
@@ -97,19 +88,24 @@ include("config.php");
 </div><!-- /page -->
 
 
-<div data-role="page" class="ui-dialog ui-page ui-body-c" id="editlyrics" data-url="editlyrics" role="dialog">
-<div data-role="header">
-<h1>Edit Lyrics</h1>
+<div data-role="dialog" class="ui-dialog ui-page ui-body-c" id="editlyrics" data-url="editlyrics">
+	<div role="dialog">
+		<div data-role="header">
+		<h1>Edit Lyrics</h1>
+		</div>
+	
+		<div data-role="content">
+		
+		<form action="editlyrics.php" id="edit2" method="POST" data-ajax="false">
+		<div data-role="fieldcontain">
+			<textarea cols="40" rows="8" name="lyrics" id="lyrics"><?php echo "".$row['lyrics']."" ?> </textarea>
+			<input type="hidden" name="projectname" value="<?php echo "$project" ?>"/><p>
+			<input type="submit" value="Submit"/>
+		</div>
+		</form>
+		</div>
+	</div>
 </div>
-<div data-role="content">
-
-<form action="editlyrics.php" id="edit2" method="POST" data-ajax="false">
-<div data-role="fieldcontain">
-	<textarea cols="40" rows="8" name="lyrics" id="lyrics"><?php echo "".$row['lyrics']."" ?> </textarea>
-	<input type="hidden" name="projectname" value="<?php echo "$project" ?>"/><p>
-	<input type="submit" value="Submit"/>
-</div>
-</form>
 
 
 </body>

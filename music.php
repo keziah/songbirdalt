@@ -48,21 +48,10 @@ include("config.php");
 		<p> To add a new music file, click on the CHOOSE FILE button. This will prompt you to take a video. Take a video with the audio you would like to save. Don't forget to add a description to the clip! When you are finished, press UPLOAD. Your audio clip will appear on this page along with your previous uploads.
 		<p> To return home, click the HOME button at the top left corner of the page.
 </div>
-	<a href="#" data-icon="check" id="logout" class="ui-btn-right">Logout</a>
 
 	</div><!-- /header -->
 
 	<div data-role="content">
-	
-<!--
-	//insert music files here??
-		<audio controls="controls" height="50px" width="100px">
-  				<source src="resources/jeTaimePlus.mp3" type="audio/mpeg" />
-  				<source src="song.ogg" type="audio/ogg" />
-				<embed height="50px" width="100px" src="jeTaimePlus.mp3" />
-	</audio>
-	
-	-->
 	
 	<?php 
 	
@@ -70,134 +59,43 @@ include("config.php");
 	$result = mysql_query($sql);
 	$count = mysql_num_rows($result);
 	
-	$songs = array();
+	//$songs = array();
 	?>
 	
-
 	<h3>Music Files</h3>
-
 	
-	<div data-role="collapsible-set">
 	
 	<?php
 	
 		if ($count > 0) {
+		?><div data-role="collapsible-set"><?php
 		while ($row = mysql_fetch_assoc($result)) {
 			$song = $row["filename"];
-			array_push($songs, $song);
+			//array_push($songs, $song);
 			
 			?>
-	
-	
-
+			<div data-role="collapsible">
+			<h3><?php echo "$song" ?></h3>
+			<p>
+			<video width="320" height="240" controls="controls">
+  				<source src="uploads/<?php echo $song; ?>" type="video/mp4">
+  				<source src="movie.ogg" type="video/ogg">
+  				Your browser does not support the video tag.
+				</video>
+			</p>
+			</div>
 	
 			<?php
-			
-		}
+		}?>
+		</div>
+		<?php
 	} else {
 		echo "No music files uploaded.<p>";
 	}
 
 		
 		?>
-		
-		
-		
 				
-				
-		<a href ="#popupVideo" data-role="button" data-rel="popup" data-transition="fade">Test button</a>
-<div data-role="popup" id="popupVideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
-
-    <iframe src="" width="497" height="298" seamless><video width="320" height="240" controls="controls">
-  				<source src="uploads/<?php echo $song; ?>" type="video/mp4">
-  				<source src="movie.ogg" type="video/ogg">
-  				Your browser does not support the video tag.
-				</video></iframe>
-	 
-</div>		
-				
-			
-	<script type="text/javascript">
-		
-		function scale( width, height, padding, border ) {
-    var scrWidth = $( window ).width() - 30,
-        scrHeight = $( window ).height() - 30,
-        ifrPadding = 2 * padding,
-        ifrBorder = 2 * border,
-        ifrWidth = width + ifrPadding + ifrBorder,
-        ifrHeight = height + ifrPadding + ifrBorder,
-        h, w;
-
-    if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
-        w = ifrWidth;
-        h = ifrHeight;
-    } else if ( ( ifrWidth / scrWidth ) > ( ifrHeight / scrHeight ) ) {
-        w = scrWidth;
-        h = ( scrWidth / ifrWidth ) * ifrHeight;
-    } else {
-        h = scrHeight;
-        w = ( scrHeight / ifrHeight ) * ifrWidth;
-    }
-
-    return {
-        'width': w - ( ifrPadding + ifrBorder ),
-        'height': h - ( ifrPadding + ifrBorder )
-    };
-};
-			
-	$( document ).on( "pageinit", function() {
-    $( "#popupVideo iframe" )
-        .attr( "width", 0 )
-        .attr( "height", 0 );
-		  
-    $( "#popupVideo" ).on({
-        popupbeforeposition: function() {
-            var size = scale( 497, 298, 15, 1 ),
-                w = size.width,
-                h = size.height;
-
-            $( "#popupVideo iframe" )
-                .attr( "width", w )
-                .attr( "height", h );
-        },
-        popupafterclose: function() {
-            $( "#popupVideo iframe" )
-                .attr( "width", 0 )
-                .attr( "height", 0 );    
-        }
-    });
-});
-</script>
-		
-		<!--
-								<embed autostart="false" src="uploads/<?php echo $song; ?>" />
-											<a href="wave_form.php?songfilename=<?php echo "".$song."" ?>">My song</a>
-
-
--->
-		
-			<!-- <embed autostart="false" src="jetaimeplus.mp3" /> -->
-
-	<!--	
-	<script type="text/javascript">
-
-	var arrayCount = "<? echo $count; ?>";
-	var arrNum = parseInt(arrayCount);
-	echo arrayCount;
-
-	if(<?php $count > 0 ?>) {
-		echo "test";
-		<embed autostart="false" src="uploads/<?php echo $filenames[0]; ?>" />
-		<p>	
-	}
-	</script>
-	
-
-		<div data-role="fieldcontain">
-			
-		</div>	
-		-->
-		
 		
 		<h3>Upload</h3>
 <!-- Begin Rio's Audio Code -->
@@ -205,17 +103,15 @@ include("config.php");
             
             <div class="upload_form_cont">
                 <form id="upload_form" enctype="multipart/form-data" method="post" action="uploadAudio.php" data-ajax = "false">
-           
-                		<input type="text" name="songfilename" placeholder="Song File Name (exclude extension)" maxlength="140"></p>
-                		<input type="hidden" name="projectname" value="<?php echo "".$project."" ?>">
-
-                    <div>
-                        <div><label for="image_file">Upload a prerecorded video file or record your music file:</label></div>
+                
+            <div>
+                        <div><label for="image_file">Clicking "Choose File" below will let you choose to upload a prerecorded video file or record a new file:</label></div>
                         <div><input type="file" accept="video/*" name="image_file" id="image_file" onchange="fileSelected();" /></div>
-                       
-
-                                            </div>
+            </div>
                     
+                		<input type="text" name="songfilename" placeholder="Name your file! (exclude extension)" maxlength="140"></p>
+                		<input type="hidden" name="projectname" value="<?php echo "".$project."" ?>">
+                   
                     <div>
                         <input class="button green bigrounded" type="submit" value="Upload" />
                     </div>
@@ -272,22 +168,6 @@ include("config.php");
 		</ul>
 		</div>
 	</div>
-	<script type="text/javascript">
-	$("#logout").hide();
-	$("#info").hide();
-	var retrievedObject = localStorage.getItem('username');
-	if (retrievedObject == "test") {
-		$("#form").hide();	
-		$("#logout").show();
-		$("#info").show();
-	}
-	$("#logout").click(function() {
-		localStorage.removeItem('username');
-		$("#form").show();
-		$("#logout").hide();
-		$("#info").hide();
-	});
-	</script>
 </div><!-- /page -->
 
 </body>
