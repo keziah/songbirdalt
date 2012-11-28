@@ -23,6 +23,7 @@
 
 </head>
 <body class="ui-mobile-viewport">
+
 <?php
 if (isset($_SESSION['username'])){
 	?>
@@ -30,9 +31,25 @@ if (isset($_SESSION['username'])){
 	<?php
 }
 ?>
+<style type="text/css">
+#login.ui-page {
+    background: url('images/songbirdBackground.png');
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+#login.ui-content{
+    background: transparent;
+}
+</style>
+
 
 <!--Begin first page-->
-<div id="login" data-role="page"class="ui-page ui-body-c ui-page-active" data-url="login" data-add-back-btn="false"> 
+<div id="login" data-role="page"class="ui-page ui-body-c ui-page-active" data-url="login" data-add-back-btn="false" > 
+
+
+
 <div data-role="header">
 <h1>Songbird</h1>
 </div><!-- /header-->
@@ -52,12 +69,20 @@ if (isset($_SESSION['username'])){
 		</fieldset>
 </div>
 <p>
-<a href="#signup" class="ui-link" data-rel="dialog" data-transition="pop">
+<a href="#signup" class="ui-link" data-theme="b" data-rel="dialog" data-role="button" data-transition="pop" data-inline="true">
 Create Account</a>
-<p>
+
+
+<a href="#more" data-rel="popup" data-role="button" data-inline="true" data-transition="fade" class="ui-btn-right">Learn more!</a>
+<div data-role="popup" id="more">
+	Put some sort of explanation here? <p>
+	Or should we do a tutorial sort of thing? <p>
+</div>		
+
 
 </div> <!--/content-->
 </div> <!--/first page-->
+
 
 <!--Begin third page-->
 <div id="signup" data-role="dialog" class="ui-dialog ui-page ui-body-c" data-url="signup" role="dialog">
@@ -66,7 +91,7 @@ Create Account</a>
 </div><!-- /header-->
 <div data-role="content" role="main" class="ui-content ui-body-c">
 	<div data-role="fieldcontain">
-	<fieldset data-rolg = "controlgroup">
+	<fieldset data-role = "controlgroup">
 	<form id="register" action="createAccount.php" method="POST" data-ajax="false">
 		Choose a username:<br>
 		<br><input type="text" name="username" id="username" maxlength="16"/><p>

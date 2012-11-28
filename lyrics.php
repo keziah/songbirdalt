@@ -49,27 +49,19 @@ $project = $_GET['projectname'];
 	
 	<div data-role="content">
 	
-	
 	<?php 	
 	$sql="SELECT * FROM projectinfo WHERE projectname = '$project'";
 	$result = mysql_query($sql);
 	$count = mysql_num_rows($result);
 	
 	if($count < 1) {
-		$stdinfo = "This is my project.";
 		$stdlyrics = "Add lyrics here.";
 		$addProject = "INSERT INTO projectinfo (`projectname`, `lyrics`) VALUES('$project', '$stdlyrics')";
 		mysql_query($addProject);
 		$result = mysql_query($sql);
 	}
-	
-		$row = mysql_fetch_assoc($result);
-		echo "".$row["info"]."";
-	
 	?>
 
-	
-	
 	
 	<p>Lyrics:</p>
 	<?php
