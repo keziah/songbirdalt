@@ -1,5 +1,5 @@
 <?php session_start();
-
+//REMEMBER NOT TO INCLUDE CONFIG HERE! OTHERWISE WE WILL GET AN INFINITE REFRESH LOOP
 ?>	
 
 <!DOCTYPE html>
@@ -56,32 +56,8 @@ if (isset($_SESSION['username'])){
 Create Account</a>
 <p>
 
-<!--<a href="#reset" class="ui-link" data-rel="dialog" data-transition="pop">
-Forgot Password?</a>
--->
-
 </div> <!--/content-->
 </div> <!--/first page-->
-
-
-<!--Begin second page-->
-<div id="reset" data-role="dialog" class="ui-dialog ui-page ui-body-c" data-url="reset" role="dialog">
-<div data-role="header">
-<h1>Reset Password</h1>
-</div><!-- /header-->
-
-<div data-role="content" class="ui-content ui-body-c" role="main">
-	<div data-role="fieldcontain">
-            <fieldset data-role="controlgroup">
-				Enter the email you used to sign up and we'll email you a link to reset your password!<p>
-				<form id="emailpass" action="reset.php" method="POST" data-ajax="false">
-					<input type="email" name="email" placeholder="you@host.com"><p>
-					<input type="submit" name ="reset" value ="Submit"><p>
-				</form>
-			</fieldset>
-	</div>
-</div> <!--/content-->
-</div> <!--/second page-->
 
 <!--Begin third page-->
 <div id="signup" data-role="dialog" class="ui-dialog ui-page ui-body-c" data-url="signup" role="dialog">
@@ -94,8 +70,6 @@ Forgot Password?</a>
 	<form id="register" action="createAccount.php" method="POST" data-ajax="false">
 		Choose a username:<br>
 		<br><input type="text" name="username" id="username" maxlength="16"/><p>
-		Email address:<br>
-		<input type="email" name="email"><p>
 		Choose a Password:<br>
 		<input type="password" name="password" id="password" maxlength="20"/><p>
 		Confirm Password:<br>

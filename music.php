@@ -1,11 +1,9 @@
 <?php session_start();
 include("config.php");
 ?>
-
 <?php
-
 	$project = $_GET['projectname'];
-	?>
+?>
 <html>
 
 <head>
@@ -20,7 +18,6 @@ include("config.php");
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="appicon.png" />
 	<link rel="apple-touch-startup-image" href="startup.png">
-	<script src="//cdn.optimizely.com/js/141856090.js"></script>
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
 	<script src="js/script.js"></script>

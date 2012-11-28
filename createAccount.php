@@ -25,7 +25,6 @@
 
 $tbl_name='users'; // Table name 
 $newUser=$_POST['username'];
-$newEmail=$_POST['email'];
 $newPass=$_POST['password']; 
 $confirmPass=$_POST['password2']; 
 
@@ -50,7 +49,7 @@ if($count > 0) {
 }
 else {
 	
-	$addUser = "INSERT INTO $tbl_name (`username`, `email`, `password`) VALUES('$newUser', 	'$newEmail', '$newPass')";
+	$addUser = "INSERT INTO $tbl_name (`username`, `password`) VALUES('$newUser', '$newPass')";
 	mysql_query($addUser);
 	
 	//autologin user

@@ -11,7 +11,6 @@ include("config.php");
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
-
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="appicon.png" />
 	<link rel="apple-touch-startup-image" href="startup.png">
@@ -45,13 +44,32 @@ $project = $_GET['projectname'];
 		<p>This is your lyrics page. From here, you can manage your project's lyrics. 
 		<p> To edit lyrics, click on the EDIT LYRICS button. Make any changes to the lyrics you want, then hit the SUBMIT button to see them in your project page.
 		<p> To return home, click the HOME button at the top left corner of the page.
-</div>
-
-				
+</div>		
 	</div><!-- /header -->
-
 	
 	<div data-role="content">
+	
+	
+	<?php 	
+	$sql="SELECT * FROM projectinfo WHERE projectname = '$project'";
+	$result = mysql_query($sql);
+	$count = mysql_num_rows($result);
+	
+	if($count < 1) {
+		$stdinfo = "This is my project.";
+		$stdlyrics = "Add lyrics here.";
+		$addProject = "INSERT INTO projectinfo (`projectname`, `lyrics`) VALUES('$project', '$stdlyrics')";
+		mysql_query($addProject);
+		$result = mysql_query($sql);
+	}
+	
+		$row = mysql_fetch_assoc($result);
+		echo "".$row["info"]."";
+	
+	?>
+
+	
+	
 	
 	<p>Lyrics:</p>
 	<?php

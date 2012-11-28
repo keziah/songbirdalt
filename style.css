@@ -11,4 +11,14 @@
 		#info .ui-icon { background:  url(icons/23-bird.png) 50% 50% no-repeat;  background-size: 22px 24px; }
 		#music .ui-icon { background:  url(icons/65-note.png) 50% 50% no-repeat;  background-size: 22px 24px; }
 		#lyrics .ui-icon { background:  url(icons/104-index-cards.png) 50% 50% no-repeat;  background-size: 22px 24px; }
-		#submit .ui-icon { background:  url(icons/56-cloud.png) 50% 50% no-repeat;  background-size: 22px 24px; }
+		#submit .ui-icon { background:  url(icons/56-cloud.png) 50% 50% no-repeat;  background-size: 22px 24px; }	
+		pre {
+ overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ /* width: 99%; */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: "helvetica", "arial"; 
+}
