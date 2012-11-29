@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 include("config.php");
 function bytesToSize1024($bytes, $precision = 2) {
     $unit = array('B','KB','MB');
@@ -18,18 +18,12 @@ if (move_uploaded_file($_FILES['image_file']['tmp_name'], "uploads/".$songfile."
 }
 
 $songfilefull = "".$songfile.".MOV";
-echo $songfilefull;
 
 $user = $_SESSION['username'];
 $query2 = "INSERT INTO musicfiles (`projectname`, `filename`, `user`) VALUES('$project', '$songfilefull', '$user')";
 $result2 = mysql_query($query2);
 
-echo <<<EOF
-<p>Your file: {$songfile} has been successsfully received.</p>
-<p>Type: {$sFileType}</p>
-<p>Size: {$sFileSize}</p>
-<p>You will be redirected back to the music page.</p>
-EOF;
+
 ?>
 
-<meta http-equiv="REFRESH" content="3; URL='lyrics.php?projectname=<?php echo "".$project."" ?>'">
+<meta http-equiv="REFRESH" content="0; URL='music.php?projectname=<?php echo "".$project."" ?>'">
