@@ -26,8 +26,15 @@ include("config.php");
 <?php
 $name = $_POST["projectname"];
 $user = $_SESSION['username'];
+
+if (empty($name)) {
+	?>
+	<meta http-equiv="REFRESH" content="0; URL='createnew.php'">
+	<?php
+} else {
+
 //Check to see if a project already exists for user with this name
-$checkfordouble = "SELECT * IN projects WHERE username='$user' AND projectname='$name'";
+$checkfordouble = "SELECT * FROM projects WHERE username='$user' and projectname='$name'";
 $exists = mysql_query($checkfordouble);
 $count = mysql_num_rows($exists);
 if ($count > 0) { //if there already is one, tack an indicator that this is another one
@@ -43,6 +50,10 @@ $result2 = mysql_query($query2);
 
 <meta http-equiv="REFRESH" content="0; URL=lyrics.php?projectname=<?php echo "".$fullname."" ?>">
 
+<?php
+}
+
+?>
 </body>
 
 </html>

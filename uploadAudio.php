@@ -8,6 +8,9 @@ function bytesToSize1024($bytes, $precision = 2) {
 $songfile = $_POST['songfilename'];
 $project = $_POST['projectname'];
 
+if (!empty($songfile)) {
+
+
 $sFileName = $_FILES['image_file']['name'];
 $sFileType = $_FILES['image_file']['type'];
 $sFileSize = bytesToSize1024($_FILES['image_file']['size'], 1);
@@ -23,7 +26,7 @@ $user = $_SESSION['username'];
 $query2 = "INSERT INTO musicfiles (`projectname`, `filename`, `user`) VALUES('$project', '$songfilefull', '$user')";
 $result2 = mysql_query($query2);
 
-
+}
 ?>
 
 <meta http-equiv="REFRESH" content="0; URL='music.php?projectname=<?php echo "".$project."" ?>'">

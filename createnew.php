@@ -71,6 +71,8 @@ include("config.php");
 		 
 	</div><!-- /content -->
 	
+	
+	<!--
 <div id="form">
 	<form action="submission.php" method="post">
 	<p><label for="message">Project Name</label>
@@ -78,10 +80,30 @@ include("config.php");
 	<input class="submit" type="submit" value="Create">
 </form></div>	
 	
-	
+	-->
 
 
-        
+    <script>
+function ValidateContactForm()
+{
+    var projname = document.CreateNewProject.projectname;
+
+    if (projname.value == "")
+    {
+        window.alert("Please enter a name for your project.");
+        return false;
+    }
+    
+    return true;
+}
+</script>
+
+<div id="form">
+	<form action="submission.php" method="post" name="CreateNewProject" onsubmit="return ValidateContactForm();">
+	<p><label for="projectname">Project Name</label>
+		<input type="text" name="projectname" maxlength="140"></p>
+	<input type="submit" value="Create">
+</form></div>    
 
 
 

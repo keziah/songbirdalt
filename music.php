@@ -96,10 +96,28 @@ include("config.php");
 		
 		<h3>Upload</h3>
 <!-- Begin Rio's Audio Code -->
+
+
+<script>
+function ValidateContactForm()
+{
+    var songname = document.AddSong.songfilename;
+
+    if (songname.value == "")
+    {
+        window.alert("Please enter a name for your recording.");
+        return false;
+    }
+    
+    return true;
+}
+</script>
+
+
 		 <div class="container">
             
             <div class="upload_form_cont">
-                <form id="upload_form" enctype="multipart/form-data" method="post" action="uploadAudio.php" data-ajax = "false">
+                <form id="upload_form" enctype="multipart/form-data" method="post" action="uploadAudio.php" data-ajax = "false" name="AddSong" onsubmit="return ValidateContactForm();">
                 
             <div>
                         <div><label for="image_file">Clicking "Choose File" below will let you choose to upload a prerecorded video file or record a new file:</label></div>
