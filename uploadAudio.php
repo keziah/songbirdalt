@@ -20,8 +20,8 @@ if (move_uploaded_file($_FILES['image_file']['tmp_name'], "uploads/".$songfile."
 $songfilefull = "".$songfile.".MOV";
 echo $songfilefull;
 
-
-$query2 = "INSERT INTO musicfiles (`projectname`, `filename`) VALUES('$project', '$songfilefull')";
+$user = $_SESSION['username'];
+$query2 = "INSERT INTO musicfiles (`projectname`, `filename`, `user`) VALUES('$project', '$songfilefull', '$user')";
 $result2 = mysql_query($query2);
 
 echo <<<EOF

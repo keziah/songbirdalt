@@ -51,8 +51,8 @@ include("config.php");
 	<div data-role="content">
 	
 	<?php 
-	
-	$sql="SELECT * FROM musicfiles WHERE projectname = '$project'";
+	$user = $_SESSION['username'];
+	$sql="SELECT * FROM musicfiles WHERE projectname = '$project' AND user = '$user'";
 	$result = mysql_query($sql);
 	$count = mysql_num_rows($result);
 	

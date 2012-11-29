@@ -22,6 +22,19 @@ include("config.php");
 	
 </head>
 <body>
+<style type="text/css">
+  .ui-page {
+    background: url('images/songbirdBackground.png');
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+  .ui-content{
+    background: transparent;
+}
+</style>
+
 	<div data-role="header">
 		<h1>Home</h1>
 				<a href="#popupMenu" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" data-inline="true" data-transition="fade" class="ui-btn-left">Options</a>
@@ -109,9 +122,6 @@ include("config.php");
 	}
 	
 	?>
-
-
-<a href="project.php?projectname=Tutorial">Example Project</a>
 
     </div><!--/data-->
 </div><!--/content-->

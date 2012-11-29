@@ -107,7 +107,7 @@ $project = $_GET['projectname'];
 
 </div><!-- /page -->
 
-<div data-role="dialog" class="ui-dialog ui-page ui-body-c" id="editlyrics" data-url="editlyrics">
+<div id="editlyrics" data-role="dialog" class="ui-dialog ui-page ui-body-c"  data-url="editlyrics">
 	<div role="dialog">
 		<div data-role="header">
 		<h1>Edit Lyrics</h1>

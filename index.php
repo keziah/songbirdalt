@@ -33,7 +33,7 @@ if (isset($_SESSION['username'])){
 ?>
 <style type="text/css">
 #login.ui-page {
-    background: url('images/songbirdBackground.png');
+    background: url('images/loginPageDesign.png');
     background-repeat:repeat-y;
     background-position:center center;
     background-attachment:scroll;
@@ -48,15 +48,8 @@ if (isset($_SESSION['username'])){
 <!--Begin first page-->
 <div id="login" data-role="page"class="ui-page ui-body-c ui-page-active" data-url="login" data-add-back-btn="false" > 
 
-
-
-<div data-role="header">
-<h1>Songbird</h1>
-</div><!-- /header-->
-
 <div class="ui-content" data-role="content" role="main">
-
-<h2>Log In</h2>
+<h3>Log In</h3>
 <div data-role="fieldcontain">
         <fieldset data-role="controlgroup">
 			<form id="login" action="checklogin.php" method="POST" accept-charset="UTF-8" data-ajax="false">

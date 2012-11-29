@@ -23,39 +23,25 @@ include("config.php");
 <body>
 
 
-<div data-role="header">
-		<h1>Project Page</h1>
-		<a data-role="button" href="myProfile.php" data-icon="home" data-iconpos="left" class="ui-btn-left" data-ajax="false">Home
-        </a>
-		
-		<a href="#popupMenu" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" data-inline="true" data-transition="fade" class="ui-btn-right">Options</a>
-
-	<div data-role="popup" id="popupMenu" data-overlay-theme="c">
-    <ul data-role="listview" data-inset="true" style="width:180px;" data-theme="c">
-    	<li>Logged in as <?php 
-    		echo($_SESSION['username']);?></li> 
-       <!-- <li><a data-rel="popup" href="myProfile.php" data-ajax="false">Profile</a></li>-->
-       <li><a data-rel="popup" href="createnew.php" data-ajax="false">New Project</a></li>
-       <li><a data-rel="popup" href="logout.php" data-ajax="false">Logout</a></li>
-         
-    </ul>
-	</div>
-		
-	</div>
-
-
 <?php
-$message = $_POST["projectname"];
+$name = $_POST["projectname"];
 $user = $_SESSION['username'];
+//Check to see if a project already exists for user with this name
+$checkfordouble = "SELECT * IN projects WHERE username='$user' AND projectname='$name'";
+$exists = mysql_query($checkfordouble);
+$count = mysql_num_rows($exists);
+if ($count > 0) { //if there already is one, tack an indicator that this is another one
+	$fullname = "".$name."-2";
+} else {
+	$fullname=$name;
+}
 
-echo "<p>New project name: ".$message."</p>";
-
-$query2 = "insert into projects values ('$user', '$message')";
+$query2 = "INSERT INTO projects (`username`, `projectname`) VALUES ('$user', '$fullname')";
 $result2 = mysql_query($query2);
 
 ?>
 
-<meta http-equiv="REFRESH" content="0; URL=lyrics.php?projectname=<?php echo "".$message."" ?>">
+<meta http-equiv="REFRESH" content="0; URL=lyrics.php?projectname=<?php echo "".$fullname."" ?>">
 
 </body>
 
