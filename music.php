@@ -121,7 +121,7 @@ function ValidateContactForm()
                 
             <div>
                         <div><label for="image_file">
-                        1. Type in the name of this recording, such as "vocals" or "instrumental". <p>
+                        1. Type in a name for this recording, such as "vocals" or "instrumental". <p>
 2. Press the choose file button, and either upload a prerecorded video of your recording or record one right now. <p>
 3. Upload your file!<p>
                         </label></div>
