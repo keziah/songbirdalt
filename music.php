@@ -120,7 +120,11 @@ function ValidateContactForm()
                 <form id="upload_form" enctype="multipart/form-data" method="post" action="uploadAudio.php" data-ajax = "false" name="AddSong" onsubmit="return ValidateContactForm();">
                 
             <div>
-                        <div><label for="image_file">Clicking "Choose File" below will let you choose to upload a prerecorded video file or record a new file:</label></div>
+                        <div><label for="image_file">
+                        1. Type in the name of this recording, such as "vocals" or "instrumental". <p>
+2. Press the choose file button, and either upload a prerecorded video of your recording or record one right now. <p>
+3. Upload your file!<p>
+                        </label></div>
                         <div><input type="file" accept="video/*" name="image_file" id="image_file" onchange="fileSelected();" /></div>
             </div>
                     
