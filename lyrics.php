@@ -21,6 +21,19 @@ include("config.php");
 
 </head>
 <body>
+<style type="text/css">
+  .ui-page {
+    background: url('images/projectPageBackground.png');
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+  .ui-content{
+    background: transparent;
+}
+</style>
+
 <?php
 $project = $_GET['projectname'];
 ?>
