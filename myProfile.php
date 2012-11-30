@@ -16,7 +16,7 @@ include("config.php");
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="appicon.png" />
 	<link rel="apple-touch-startup-image" href="startup.png">
-	
+	<link rel="stylesheet" href="themes/SB.min.css" />
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
 	

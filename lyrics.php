@@ -14,7 +14,7 @@ include("config.php");
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="appicon.png" />
 	<link rel="apple-touch-startup-image" href="startup.png">
-	
+	<link rel="stylesheet" href="themes/SB.min.css" />
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
 	<script src="js/script.js"></script>
@@ -26,7 +26,7 @@ include("config.php");
     background: url('images/projectPageBackground.png');
     background-repeat:repeat-y;
     background-position:center center;
-    background-attachment:scroll;
+    background-attachment:fixed;
     background-size:100% 100%;
 }
   .ui-content:not(#editlyrics.ui-content){

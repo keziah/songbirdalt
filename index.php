@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="images/appicon.png" />
 	<link rel="apple-touch-startup-image" href="images/startup.png">
-	
+	<link rel="stylesheet" href="themes/SB.min.css" />
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
 
@@ -36,7 +36,7 @@ if (isset($_SESSION['username'])){
     background: url('images/loginPageDesign.png');
     background-repeat:repeat-y;
     background-position:center center;
-    background-attachment:scroll;
+    background-attachment:fixed;
     background-size:100% 100%;
 }
 #login.ui-content{
@@ -44,7 +44,7 @@ if (isset($_SESSION['username'])){
 }
 #mainContent{
 	position:absolute;
-	top:120px;
+	top:90px;
 }
 </style>
 

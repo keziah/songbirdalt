@@ -14,7 +14,7 @@ include("config.php");
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
-
+	<link rel="stylesheet" href="themes/SB.min.css" />
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="images/appicon.png" />
 	<link rel="apple-touch-startup-image" href="images/startup.png">
@@ -30,7 +30,7 @@ include("config.php");
     background: url('images/projectPageBackground.png');
     background-repeat:repeat-y;
     background-position:center center;
-    background-attachment:scroll;
+    background-attachment:fixed;
     background-size:100% 100%;
 }
   .ui-content {
