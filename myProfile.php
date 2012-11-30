@@ -41,10 +41,9 @@ include("config.php");
 		
 	<div data-role="popup" id="popupMenu" data-overlay-theme="c">
     <ul data-role="listview" data-inset="true" style="width:180px;" data-theme="c">
-    	<li>Logged in as <?php 
-    		echo($_SESSION['username']);?></li> 
         <li><a data-rel="popup" href="createnew.php" data-ajax="false">New Project</a></li>
-      	<li><a data-rel="popup" href="logout.php" data-ajax="false">Logout</a></li>
+      	<li><a data-rel="popup" href="logout.php" data-ajax="false">Logout <?php 
+    		echo($_SESSION['username']);?></a></li>
     </ul>
 	</div>
 	<!--help div-->
@@ -71,7 +70,7 @@ include("config.php");
 
 
 <section id="center">
-
+<center><p><i>Organize your music inspirations using Songbird!</i></p></center>
 <h1><?php 
 		echo($_SESSION['username']);
 		?></h1>
@@ -84,7 +83,7 @@ include("config.php");
 
 
                 </div> -->
-                <p> Organize your music inspirations using Songbird! </p>
+                
 
                  
 
