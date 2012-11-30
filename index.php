@@ -72,8 +72,7 @@ Create Account</a>
 
 <div data-role="popup" id="more" class="helpPopup">
 <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
-	Put some sort of explanation here? <p>
-	Or should we do a tutorial sort of thing? <p>
+	Songbird is an app that helps you manage your musical inspirations! Upload different versions of your song and add lyrics as you think of them, then link all your inspirations for a specific song in a custom project page. Never lose track of your ideas again!
 </div>
 
 

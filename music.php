@@ -95,6 +95,18 @@ include("config.php");
   				Your browser does not support the video tag.
 				</video>
 			</p>
+			<center><a href="#delfile" data-role="button" data-rel="popup" data-transition="pop" data-inline="true" data-mini="true" data-position-to="window"><font style="color:#BB0000;">Delete File</font></a></center>
+			
+			</div>
+	
+			<div data-role="popup" id="delfile" class="helpPopup">
+			Are you sure you want to delete "<?php echo "$song"?>"?<p>
+			<form action="deletefile.php" method="POST" data-ajax="false">
+				<input type="hidden" name="filename" value="<?php echo "$song" ?>"/><p>
+				<input type="hidden" name="projectname" value="<?php echo "$project" ?>"/><p>
+				<a href="#" data-rel="back" data-role="button" data-inline="true">Cancel</a>
+				<input type="submit" data-role="button" value="Delete" data-inline="true"/>
+			</form>
 			</div>
 	
 			<?php
@@ -199,6 +211,7 @@ function ValidateContactForm()
 		</div>
 	</div>
 </div><!-- /page -->
+
 
 </body>
 </html>
