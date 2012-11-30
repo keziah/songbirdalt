@@ -42,13 +42,17 @@ if (isset($_SESSION['username'])){
 #login.ui-content{
     background: transparent;
 }
+#mainContent{
+	position:absolute;
+	top:120px;
+}
 </style>
 
 
 <!--Begin first page-->
 <div id="login" data-role="page"class="ui-page ui-body-c ui-page-active" data-url="login" data-add-back-btn="false" > 
 
-<div class="ui-content" data-role="content" role="main">
+<div class="ui-content" data-role="content" role="main" id="mainContent">
 <h3>Log In</h3>
 <div data-role="fieldcontain">
         <fieldset data-role="controlgroup">

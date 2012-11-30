@@ -25,6 +25,20 @@ include("config.php");
 
  
 <body> 
+<style type="text/css">
+  .ui-page {
+    background: url('images/projectPageBackground.png');
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+  .ui-content {
+    background: transparent;
+}
+
+</style>
+
 <div data-role="page">
 
 	<div data-role="header">
