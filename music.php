@@ -114,7 +114,6 @@ function ValidateContactForm()
 }
 </script>
 
-
 		 <div class="container">
             
             <div class="upload_form_cont">
@@ -123,9 +122,10 @@ function ValidateContactForm()
             <div>
                         <div><label for="image_file">
                         1. Type in a name for this recording, such as "vocals" or "instrumental". <p>
-2. Press the choose file button, and either upload a prerecorded video of your recording or record one right now. <p>
+2. Press the <b>Choose File</b> button to either upload a prerecorded video of your recording or record one right now. <p>
 3. Upload your file!<p>
                         </label></div>
+                        <!--add style="display:none;visibility:hidden" to make invisible-->
                         <div><input type="file" accept="video/*" name="image_file" id="image_file" onchange="fileSelected();" /></div>
             </div>
                     
@@ -171,10 +171,8 @@ function ValidateContactForm()
 	
 		
 	<div id="info">
-
-		<!--<embed src="uploads/Starlight.mp3" autostart="false" loop="false">-->
-
 	</div>	
+	
 	</div><!-- /content -->
 
     <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
@@ -183,8 +181,6 @@ function ValidateContactForm()
 				
 				<li><a href="lyrics.php?projectname=<?php echo "".$project."" ?>" id="lyrics" data-icon="custom">Lyrics</a></li>
 				<li><a href="music.php?projectname=<?php echo "".$project."" ?>" id="music" data-icon="custom" class="ui-btn-active">Music</a></li>
-				
-				<!--<li><a href="submit.php" id="submit" data-icon="custom">Submit</a></li>-->
 		</ul>
 		</div>
 	</div>
