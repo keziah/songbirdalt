@@ -34,7 +34,6 @@ if (isset($_SESSION['username'])){
 <style type="text/css">
 #login.ui-page {
     background: url('images/loginPageDesign.png');
-    background-repeat:repeat-y;
     background-position:center center;
     background-attachment:fixed;
     background-size:100% 100%;
@@ -43,7 +42,7 @@ if (isset($_SESSION['username'])){
     background: transparent;
 }
 #mainContent{
-	position:absolute;
+	position:relative;
 	top:90px;
 }
 </style>
@@ -51,7 +50,6 @@ if (isset($_SESSION['username'])){
 
 <!--Begin first page-->
 <div id="login" data-role="page"class="ui-page ui-body-c ui-page-active" data-url="login" data-add-back-btn="false" > 
-
 <div class="ui-content" data-role="content" role="main" id="mainContent">
 <h3>Log In</h3>
 <div data-role="fieldcontain">
@@ -66,13 +64,12 @@ if (isset($_SESSION['username'])){
 		</fieldset>
 </div>
 <p>
-<a href="#signup" data-theme="b" data-rel="dialog" data-role="button" data-transition="pop" data-inline="true">
+<a href="#signup" data-rel="dialog" data-role="button" data-transition="fade" data-theme="b">
 Create Account</a>
-<a href="#more" data-rel="popup" data-role="button" data-inline="true" data-transition="fade">Learn more!</a>
+<a href="#more" data-rel="popup" data-role="button" data-transition="fade">Learn more!</a>
 
-<div data-role="popup" id="more" class="helpPopup">
-<a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
-	Songbird is an app that helps you manage your musical inspirations! Upload different versions of your song and add lyrics as you think of them, then link all your inspirations for a specific song in a custom project page. Never lose track of your ideas again!
+<div data-role="popup" id="more" class="helpPopup" data-position-to="window">
+	<b>Songbird</b> is an app that helps you manage your musical inspirations! <b>Upload or record</b> different versions of your song and <b>add lyrics</b> as you think of them, with all your inspirations for a specific song linked in a custom project page. Never lose track of your ideas again!
 </div>
 
 
