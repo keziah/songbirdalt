@@ -14,7 +14,7 @@ include("config.php");
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="appicon.png" />
 	<link rel="apple-touch-startup-image" href="startup.png">
-	<link rel="stylesheet" href="themes/SB.min.css" />
+	<link rel="stylesheet" href="themes/custom.min.css" />
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
 	<script src="js/script.js"></script>
@@ -78,7 +78,7 @@ $project = $_GET['projectname'];
 	?>
 
 	
-	<p>Lyrics:</p>
+	<h3>Lyrics:</h3>
 	<?php
 	$sql="SELECT * FROM projectinfo WHERE projectname = '$project'";
 	$result = mysql_query($sql);
@@ -104,7 +104,7 @@ $project = $_GET['projectname'];
 			<ul>
 				
 				<li><a href="lyrics.php?projectname=<?php echo "".$project."" ?>" id="lyrics" data-icon="custom" class="ui-btn-active">Lyrics</a></li>
-				<li><a href="music.php?projectname=<?php echo "".$project."" ?>" id="music" data-icon="custom">Music</a></li>
+				<li><a href="music.php?projectname=<?php echo "".$project."" ?>" id="music" data-icon="custom">Media</a></li>
 				
 			</ul>
 		</div>

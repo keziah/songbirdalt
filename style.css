@@ -25,6 +25,9 @@
 	.helpPopup {
 		padding:15px;
 	}
+	div[data-role="page"]{
+	  background-attachment: fixed;
+	}
 	a {
 		color: #5e8b9d;	
 	}

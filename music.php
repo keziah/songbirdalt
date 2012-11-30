@@ -14,7 +14,7 @@ include("config.php");
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
-	<link rel="stylesheet" href="themes/SB.min.css" />
+	<link rel="stylesheet" href="themes/custom.min.css" />
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="images/appicon.png" />
 	<link rel="apple-touch-startup-image" href="images/startup.png">
@@ -74,19 +74,19 @@ include("config.php");
 	//$songs = array();
 	?>
 	
-	<h3>Music Files</h3>
+	<h3>Media Files</h3>
 	
 	
 	<?php
 	
 		if ($count > 0) {
-		?><div data-role="collapsible-set"><?php
+		?><div data-role="collapsible-set" data-content-theme="a"><?php
 		while ($row = mysql_fetch_assoc($result)) {
 			$song = $row["filename"];
 			//array_push($songs, $song);
 			
 			?>
-			<div data-role="collapsible">
+			<div data-role="collapsible" data-theme="b">
 			<h3><?php echo "$song" ?></h3>
 			<p>
 			<video width="320" height="240" controls="controls">
@@ -194,7 +194,7 @@ function ValidateContactForm()
 		<ul>
 				
 				<li><a href="lyrics.php?projectname=<?php echo "".$project."" ?>" id="lyrics" data-icon="custom">Lyrics</a></li>
-				<li><a href="music.php?projectname=<?php echo "".$project."" ?>" id="music" data-icon="custom" class="ui-btn-active">Music</a></li>
+				<li><a href="music.php?projectname=<?php echo "".$project."" ?>" id="music" data-icon="custom" class="ui-btn-active">Media</a></li>
 		</ul>
 		</div>
 	</div>
