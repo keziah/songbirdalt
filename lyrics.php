@@ -57,7 +57,7 @@ $project = $_GET['projectname'];
 <div data-role="popup" id="help" class="helpPopup">
 <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
 		<p>This is your lyrics page. From here, you can manage your project's lyrics. 
-		<p> To edit lyrics, click on the EDIT LYRICS button. Make any changes to the lyrics you want, then hit the SUBMIT button to see them in your project page.
+		<p> To edit lyrics, click on the EDIT LYRICS button. Make any changes to the lyrics you want, then hit the SUBMIT button to save them.
 		<p> To return home, click the HOME button at the top left corner of the page.
 </div>		
 	</div><!-- /header -->
