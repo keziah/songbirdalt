@@ -22,3 +22,6 @@
  word-wrap: break-word; /* Internet Explorer 5.5+ */
  font-family: "helvetica", "arial"; 
 }
+		.helpPopup {
+			padding:15px;
+		}

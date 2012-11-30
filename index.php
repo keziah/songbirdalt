@@ -18,6 +18,7 @@
 	
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
+	<script src="js/script.js"></script>
 
 	<title>Songbird - Welcome!</title>
 
@@ -62,15 +63,15 @@ if (isset($_SESSION['username'])){
 		</fieldset>
 </div>
 <p>
-<a href="#signup" class="ui-link" data-theme="b" data-rel="dialog" data-role="button" data-transition="pop" data-inline="true">
+<a href="#signup" data-theme="b" data-rel="dialog" data-role="button" data-transition="pop" data-inline="true">
 Create Account</a>
+<a href="#more" data-rel="popup" data-role="button" data-inline="true" data-transition="fade">Learn more!</a>
 
-
-<a href="#more" data-rel="popup" data-role="button" data-inline="true" data-transition="fade" class="ui-btn-right">Learn more!</a>
-<div data-role="popup" id="more">
+<div data-role="popup" id="more" class="helpPopup">
+<a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
 	Put some sort of explanation here? <p>
 	Or should we do a tutorial sort of thing? <p>
-</div>		
+</div>
 
 
 </div> <!--/content-->

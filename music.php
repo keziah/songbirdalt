@@ -16,8 +16,8 @@ include("config.php");
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
 
 	<link rel="stylesheet" href="style.css" />
-	<link rel="apple-touch-icon" href="appicon.png" />
-	<link rel="apple-touch-startup-image" href="startup.png">
+	<link rel="apple-touch-icon" href="images/appicon.png" />
+	<link rel="apple-touch-startup-image" href="images/startup.png">
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
 	<script src="js/script.js"></script>
@@ -40,7 +40,8 @@ include("config.php");
 			
 	<a href="#help" data-rel="popup" data-role="button" data-inline="true" data-transition="fade" class="ui-btn-right">Help</a>
 	
-<div data-role="popup" id="help">
+<div data-role="popup" id="help" class="helpPopup">
+<a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
 		<p>This is your music page. From here, you can manage your project's audio clips. 
 		<p> To add a new music file, click on the CHOOSE FILE button. This will prompt you to take a video. Take a video with the audio you would like to save. Don't forget to add a description to the clip! When you are finished, press UPLOAD. Your audio clip will appear on this page along with your previous uploads.
 		<p> To return home, click the HOME button at the top left corner of the page.

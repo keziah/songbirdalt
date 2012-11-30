@@ -51,8 +51,8 @@ include("config.php");
 	
 	<a href="#help" data-rel="popup" data-role="button" data-inline="true" data-transition="fade" class="ui-btn-right">Help</a>
 	
-<div data-role="popup" id="help">
-<!--<a href="#" data-role="button" class="ui-btn-left" data-iconpos="notext" data-icon="delete" data-rel="back"> </a>-->
+<div data-role="popup" id="help" class="helpPopup">
+<a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
 		<p>This is your home page. From here, you can create a new project or manage the projects you have already created. 	
 		<p> To create a new project or log out, use the options menu on the top left corner of this page. 	
 		<p>You can always return to this page by clicking HOME on the top left corner of any other page.
