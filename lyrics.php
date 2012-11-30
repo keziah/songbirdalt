@@ -111,8 +111,7 @@ $project = $_GET['projectname'];
 	</div>
 </div><!-- /page -->
 
-<div id="editlyrics" data-role="dialog" class="ui-dialog ui-page ui-body-c" data-url="editlyrics">
-	<div role="dialog">
+<div id="editlyrics" data-role="page" class="ui-dialog ui-page ui-body-c" data-url="editlyrics" role="dialog">
 		<div data-role="header">
 		<h1>Edit Lyrics</h1>
 		</div>
@@ -124,7 +123,6 @@ $project = $_GET['projectname'];
 				<input type="submit" value="Submit"/>
 			</div>
 		</form>
-		</div>
 	</div>
 </div>
 

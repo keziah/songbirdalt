@@ -22,9 +22,9 @@
  word-wrap: break-word; /* Internet Explorer 5.5+ */
  font-family: "helvetica", "arial"; 
 }
-		.helpPopup {
-			padding:15px;
-		}
+	.helpPopup {
+		padding:15px;
+	}
 	a {
 		color: #5e8b9d;	
 	}
