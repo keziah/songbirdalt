@@ -5,7 +5,7 @@ include("config.php");
 
 <html>
 
-<head>
+<head> 
 	<title>Songbird</title> 
 	<meta charset="utf-8">
 	<meta name="apple-mobile-web-app-capable" content="yes">
