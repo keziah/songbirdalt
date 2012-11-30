@@ -91,7 +91,10 @@ $project = $_GET['projectname'];
 		
 	<a href="#editlyrics" data-role="button" data-rel="dialog" data-transition="pop">Edit Lyrics</a>
 
-
+<p>
+<HR WIDTH="98%" SIZE="3">
+<p>
+<center><a href="#delproj" data-role="button" data-rel="dialog" data-transition="pop" data-inline="true" data-mini="true"><font style="color:#BB0000;">Delete Project</font></a></center>
 	
 	</div><!-- /content -->
 
@@ -125,6 +128,21 @@ $project = $_GET['projectname'];
 	</div>
 </div>
 
+<div data-role="page" class="ui-dialog ui-page ui-body-c" id="delproj" data-url="delproj" role="dialog">
+<div data-role="header">
+<h1>Delete Project?</h1>
+</div>
+<div data-role="content">
+Are you sure you want to delete "<?php echo "$project"?>"?<p>
+
+<form action="deleteproject.php" method="POST" data-ajax="false">
+	<input type="hidden" name="projectname" value="<?php echo "$project" ?>"/><p>
+	<a href="#" data-rel="back" data-role="button" data-inline="true">Cancel</a>
+	<input type="submit" data-role="button" value="Delete" data-inline="true"/>
+</form>
+	
+</div><!-- /content -->
+</div><!-- /page four -->
 
 
 
