@@ -80,13 +80,13 @@ include("config.php");
 	<?php
 	
 		if ($count > 0) {
-		?><div data-role="collapsible-set" data-content-theme="a"><?php
+		?><div data-role="collapsible-set" data-content-theme="a" data-theme="a"><?php
 		while ($row = mysql_fetch_assoc($result)) {
 			$song = $row["filename"];
 			//array_push($songs, $song);
 			
 			?>
-			<div data-role="collapsible" data-theme="b">
+			<div data-role="collapsible">
 			<h3><?php echo "$song" ?></h3>
 			<p>
 			<video width="320" height="240" controls="controls">
