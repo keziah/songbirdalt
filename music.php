@@ -88,14 +88,14 @@ include("config.php");
 			?>
 			<div data-role="collapsible">
 			<h3><?php echo "$song" ?></h3>
-			<p>
-			<video width="320" height="240" controls="controls">
+			<p><center>
+			<video width="250" height="188" controls="controls">
   				<source src="uploads/<?php echo $song; ?>" type="video/mp4">
   				<source src="movie.ogg" type="video/ogg">
   				Your browser does not support the video tag.
 				</video>
 			</p>
-			<center><a href="#delfile" data-role="button" data-rel="popup" data-transition="pop" data-inline="true" data-mini="true" data-position-to="window"><font style="color:#BB0000;">Delete File</font></a></center>
+			<a href="#delfile" data-role="button" data-rel="popup" data-transition="pop" data-inline="true" data-mini="true" data-position-to="window"><font style="color:#BB0000;">Delete File</font></a></center>
 			
 			</div>
 	

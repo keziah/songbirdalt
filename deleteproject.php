@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 include("config.php");
 
 $project = $_POST['projectname'];
