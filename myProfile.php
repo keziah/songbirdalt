@@ -27,7 +27,7 @@ include("config.php");
     background: url('images/songbirdBackground.png');
     background-repeat:repeat-y;
     background-position:center center;
-    background-attachment:scroll;
+    background-attachment:fixed;
     background-size:100% 100%;
 }
   .ui-content{

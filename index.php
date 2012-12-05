@@ -19,7 +19,7 @@
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
 
-	<title>Songbird - Welcome!</title>
+	<title>Songbird</title>
 
 </head>
 <body class="ui-mobile-viewport">
@@ -32,25 +32,26 @@ if (isset($_SESSION['username'])){
 }
 ?>
 <style type="text/css">
-#login.ui-page {
+.ui-page {
     background: url('images/loginPageDesign.png');
     background-position:center center;
-    background-attachment:fixed;
-    background-size:100% 100%;
+    background-attachment:scroll;
+    background-size: 100% 100%;
 }
 #login.ui-content{
     background: transparent;
 }
-#mainContent{
-	position:relative;
-	top:90px;
+#spacer {
+	height: 75px;
 }
 </style>
 
 
 <!--Begin first page-->
-<div id="login" data-role="page"class="ui-page ui-body-c ui-page-active" data-url="login" data-add-back-btn="false" > 
-<div class="ui-content" data-role="content" role="main" id="mainContent">
+<div id="login" data-role="page" data-url="login" data-add-back-btn="false" > 
+<div data-role="content" role="main">
+<div id="spacer">
+</div>
 <h3>Log In</h3>
 <div data-role="fieldcontain">
         <fieldset data-role="controlgroup">
@@ -64,14 +65,13 @@ if (isset($_SESSION['username'])){
 		</fieldset>
 </div>
 <p>
-<a href="#signup" data-rel="dialog" data-role="button" data-transition="fade" data-theme="b">
-Create Account</a>
-<a href="#more" data-rel="popup" data-role="button" data-transition="fade">Learn more!</a>
+<center><a href="#signup" data-rel="dialog" data-role="button" data-transition="fade" data-theme="b" data-inline="true">
+New User</a>
+<a href="#more" data-rel="popup" data-role="button" data-transition="fade" data-inline="true">Learn more!</a></center>
 
 <div data-role="popup" id="more" class="helpPopup" data-position-to="window">
 	<b>Songbird</b> is an app that helps you manage your musical inspirations! <b>Upload or record</b> different versions of your song and <b>add lyrics</b> as you think of them, with all your inspirations for a specific song linked in a custom project page. Never lose track of your ideas again!
 </div>
-
 
 </div> <!--/content-->
 </div> <!--/first page-->
