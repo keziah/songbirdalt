@@ -99,7 +99,11 @@ include("config.php");
 			
 			</div>
 	
-			<div data-role="popup" id="delfile" class="helpPopup">
+			<div data-role="popup" id="delfile">
+			<div data-role="header">
+			<h1>Delete File?</h1>
+			</div>
+			<div class="helpPopup">
 			Are you sure you want to delete "<?php echo "$song"?>"?<p>
 			<form action="deletefile.php" method="POST" data-ajax="false">
 				<input type="hidden" name="file" value="<?php echo "$song" ?>"/><p>
@@ -107,6 +111,7 @@ include("config.php");
 				<a href="#" data-rel="back" data-role="button" data-inline="true">Cancel</a>
 				<input type="submit" data-role="button" value="Delete" data-inline="true"/>
 			</form>
+			</div>
 			</div>
 	
 			<?php

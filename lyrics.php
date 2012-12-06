@@ -89,12 +89,12 @@ $project = $_GET['projectname'];
 	echo "<pre>".$row["lyrics"]."</pre>"; //give pre a class or id so you can change font in css
 	?>	
 		
-	<a href="#editlyrics" data-role="button" data-rel="dialog" data-transition="pop">Edit Lyrics</a>
+	<a href="#editlyrics" data-role="button" data-rel="popup">Edit Lyrics</a>
 
 <p>
 <HR WIDTH="98%" SIZE="3">
 <p>
-<center><a href="#delproj" data-role="button" data-rel="dialog" data-transition="pop" data-inline="true" data-mini="true"><font style="color:#BB0000;">Delete Project</font></a></center>
+<center><a href="#delproj" data-role="button" data-rel="popup" data-inline="true" data-mini="true"><font style="color:#BB0000;">Delete Project</font></a></center>
 	
 	</div><!-- /content -->
 
@@ -105,20 +105,18 @@ $project = $_GET['projectname'];
 				
 				<li><a href="lyrics.php?projectname=<?php echo "".$project."" ?>" id="lyrics" data-icon="custom" class="ui-btn-active">Lyrics</a></li>
 				<li><a href="music.php?projectname=<?php echo "".$project."" ?>" id="music" data-icon="custom">Media</a></li>
-				
 			</ul>
 		</div>
 	</div>
-</div><!-- /page -->
-
-<div id="editlyrics" data-role="page" class="ui-dialog ui-page ui-body-c" data-url="editlyrics" role="dialog">
+	
+<div id="editlyrics" data-role="popup">
 		<div data-role="header">
 		<h1>Edit Lyrics</h1>
 		</div>
 		<div data-role="content">
 		<form action="editlyrics.php" method="POST" data-ajax="false">
 			<div data-role="fieldcontain">
-				<textarea cols="40" rows="8" name="lyrics" id="lyrics"><?php echo "".$row['lyrics']."" ?> </textarea>
+				<textarea cols="40" rows="8" name="lyrics" id="lyrics"><?php echo "".$row['lyrics'].""?> </textarea>
 				<input type="hidden" name="projectname" value="<?php echo "$project" ?>"/><p>
 				<input type="submit" value="Submit"/>
 			</div>
@@ -126,7 +124,7 @@ $project = $_GET['projectname'];
 	</div>
 </div>
 
-<div data-role="page" class="ui-dialog ui-page ui-body-c" id="delproj" data-url="delproj" role="dialog">
+<div data-role="popup" id="delproj">
 <div data-role="header">
 <h1>Delete Project?</h1>
 </div>
@@ -141,6 +139,11 @@ Are you sure you want to delete "<?php echo "$project"?>"?<p>
 	
 </div><!-- /content -->
 </div><!-- /page four -->
+	
+	
+</div><!-- /page -->
+
+
 
 
 
