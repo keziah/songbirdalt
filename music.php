@@ -84,23 +84,20 @@ include("config.php");
 		while ($row = mysql_fetch_assoc($result)) {
 			$song = $row["filename"];
 			//array_push($songs, $song);
-			
 			?>
 			<div data-role="collapsible">
 			<h3><?php echo "$song" ?></h3>
 			<p><center>
 			<video width="250" height="188" controls="controls">
-  				<source src="uploads/<?php echo $song; ?>" type="video/mp4">
+  				<source src="uploads/<?php echo "$song" ?>" type="video/mp4">
   				<source src="movie.ogg" type="video/ogg">
   				Your browser does not support the video tag.
-				</video>
+  				
+			</video>
 			</p>
-			<a href="#delfile" data-role="button" data-rel="popup" data-transition="pop" data-inline="true" data-mini="true" data-position-to="window"><font style="color:#BB0000;">Delete File</font></a></center>
-			
-			</div>
-	
+			<a href="#delfile" data-role="button" data-rel="popup" data-transition="pop" data-inline="true" data-mini="true" data-position-to="window"><font style="color:#BB0000;">Delete File</a></font></center>
 			<div data-role="popup" id="delfile">
-			<div data-role="header">
+			<div data-role="header" data-backbtn=”false”>
 			<h1>Delete File?</h1>
 			</div>
 			<div class="helpPopup">
@@ -113,7 +110,7 @@ include("config.php");
 			</form>
 			</div>
 			</div>
-	
+		</div>
 			<?php
 		}?>
 		</div>
