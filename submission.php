@@ -32,6 +32,8 @@ if (empty($name)) {
 	<meta http-equiv="REFRESH" content="0; URL='createnew.php'">
 	<?php
 } else {
+	
+$name = str_replace("'", "", $name);
 
 //Check to see if a project already exists for user with this name
 $checkfordouble = "SELECT * FROM projects WHERE username='$user' and projectname='$name'";
