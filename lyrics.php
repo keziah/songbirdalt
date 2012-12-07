@@ -115,11 +115,11 @@ $project = $_GET['projectname'];
 		</div>
 		<div data-role="content">
 		<form action="editlyrics.php" method="POST" data-ajax="false">
-			<div data-role="fieldcontain">
+			
 				<textarea cols="40" rows="8" name="lyrics" id="lyrics"><?php echo "".$row['lyrics'].""?> </textarea>
 				<input type="hidden" name="projectname" value="<?php echo "$project" ?>"/><p>
-				<input type="submit" value="Submit"/>
-			</div>
+				<a href="#" data-rel="back" data-role="button" data-inline="true">Cancel</a>
+				<input type="submit" data-role="button" value="Save" data-inline="true"/>
 		</form>
 	</div>
 </div>
