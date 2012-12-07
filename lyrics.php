@@ -109,8 +109,8 @@ $project = $_GET['projectname'];
 		</div>
 	</div>
 	
-<div id="editlyrics" data-role="popup">
-		<div data-role="header" data-backbtn=”false”>
+<div id="editlyrics" data-role="popup" data-backbtn=”false”>
+		<div data-role="header">
 		<h1>Edit Lyrics</h1>
 		</div>
 		<div data-role="content">
@@ -124,8 +124,8 @@ $project = $_GET['projectname'];
 	</div>
 </div>
 
-<div data-role="popup" id="delproj">
-<div data-role="header" data-backbtn=”false”>
+<div data-role="popup" id="delproj" data-backbtn=”false”>
+<div data-role="header">
 <h1>Delete Project?</h1>
 </div>
 <div data-role="content">

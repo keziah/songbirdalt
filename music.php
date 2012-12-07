@@ -81,6 +81,7 @@ include("config.php");
 	
 		if ($count > 0) {
 		?><div data-role="collapsible-set" data-content-theme="a" data-theme="a"><?php
+		$enum = 0;
 		while ($row = mysql_fetch_assoc($result)) {
 			$song = $row["filename"];
 			//array_push($songs, $song);
@@ -95,9 +96,10 @@ include("config.php");
   				
 			</video>
 			</p>
-			<a href="#delfile" data-role="button" data-rel="popup" data-transition="pop" data-inline="true" data-mini="true" data-position-to="window"><font style="color:#BB0000;">Delete File</a></font></center>
-			<div data-role="popup" id="delfile">
-			<div data-role="header" data-backbtn=”false”>
+			<a href="#delFile<?php echo "$enum" ?>" data-role="button" data-rel="popup" data-transition="pop" data-inline="true" data-mini="true" data-position-to="window"><font style="color:#BB0000;">Delete File</font></a></center>
+			
+			<div data-role="popup" id="delFile<?php echo "$enum" ?>" data-backbtn=”false”>
+			<div data-role="header">
 			<h1>Delete File?</h1>
 			</div>
 			<div class="helpPopup">
@@ -106,12 +108,13 @@ include("config.php");
 				<input type="hidden" name="file" value="<?php echo "$song" ?>"/><p>
 				<input type="hidden" name="projectname" value="<?php echo "$project" ?>"/><p>
 				<a href="#" data-rel="back" data-role="button" data-inline="true">Cancel</a>
-				<input type="submit" data-role="button" value="Delete" data-inline="true"/>
+				<input type="submit" data-theme="c" class="delButton" data-role="button" value="Delete" data-inline="true"/>
 			</form>
 			</div>
 			</div>
 		</div>
 			<?php
+			$enum = $enum + 1;
 		}?>
 		</div>
 		<?php
